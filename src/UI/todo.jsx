@@ -1,4 +1,6 @@
 import React from "react";
+import { MdDeleteOutline } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
 
 export default function Todo() {
   return (
@@ -23,14 +25,35 @@ export default function Todo() {
         </form>
         <div className="flex justify-center items-center mb-12">
           <ul>
-            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded ">
-              Task 1
+            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded flex justify-between">
+              <div className="flex gap-2">
+                <input type="checkbox" className="w-5" />
+                <p className="text-lg">Task 1</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <FaRegEdit className="w-6 h-6" />
+                <MdDeleteOutline className="w-6 h-6" />
+              </div>
             </li>
-            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded">
-              Task 2
+            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded flex justify-between">
+              <div className="flex gap-2">
+                <input type="checkbox" className="w-5" />
+                <p className="text-lg">Task 1</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <FaRegEdit className="w-6 h-6" />
+                <MdDeleteOutline className="w-6 h-6" />
+              </div>
             </li>
-            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded ">
-              Task 3
+            <li className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded flex justify-between">
+              <div className="flex gap-2">
+                <input type="checkbox" className="w-5" />
+                <p className="text-lg">Task 1</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <FaRegEdit className="w-6 h-6" />
+                <MdDeleteOutline className="w-6 h-6" />
+              </div>
             </li>
           </ul>
         </div>
