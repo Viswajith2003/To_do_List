@@ -5,8 +5,8 @@ import Demo from './UI/demo'
 export default function App() {
   return (
     <div>
-      {/* <Todo/> */}
-      <Demo/>
+      <Todo/>
+      {/* <Demo/> */}
     </div>
   )
 }
