@@ -9,12 +9,16 @@ export default function Todo() {
 
   const handleAddOrUpdate = () => {
     if (edit.id) {
-      setTodos(todos.map(data => data.id === edit.id ? { ...data, list: input } : data));
+      setTodos(
+        todos.map((data) =>
+          data.id === edit.id ? { ...data, list: input } : data
+        )
+      );
       setEdit({ id: null, list: "" });
     } else {
       setTodos([...todos, { list: input, id: Date.now() }]);
     }
-    setInput('');
+    setInput("");
   };
 
   const handleSubmit = (e) => {
@@ -56,14 +60,23 @@ export default function Todo() {
         <div className="flex justify-center items-center mb-12">
           <ul>
             {todos.map((data) => (
-              <li key={data.id} className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded flex justify-between">
+              <li
+                key={data.id}
+                className="bg-[#1e4a83] w-96 mt-8 text-left p-2 rounded flex justify-between"
+              >
                 <div className="flex gap-2">
                   <input type="checkbox" className="w-5" />
                   <p className="text-lg">{data.list}</p>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <FaRegEdit className="w-6 h-6" onClick={() => setEditTodo(data.id, data.list)} />
-                  <MdDeleteOutline className="w-6 h-6" onClick={() => setDelete(data.id)} />
+                  <FaRegEdit
+                    className="w-6 h-6"
+                    onClick={() => setEditTodo(data.id, data.list)}
+                  />
+                  <MdDeleteOutline
+                    className="w-6 h-6"
+                    onClick={() => setDelete(data.id)}
+                  />
                 </div>
               </li>
             ))}
@@ -73,4 +86,3 @@ export default function Todo() {
     </div>
   );
 }
-
