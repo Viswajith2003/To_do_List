@@ -8,8 +8,9 @@ export default function App() {
   };
   return (
     <div className="bg-black text-white h-screen">
+      <Workout/>
       {/* <Todo /> */}
-      <Workout name="viswajith" handleClick={showMsg} />
+      {/* <Workout name="viswajith" handleClick={showMsg} /> */}
     </div>
   );
 }

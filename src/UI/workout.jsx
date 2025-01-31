@@ -1,13 +1,29 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Workout({ name, handleClick }) {
-  const [count, setcount] = useState(0);
+export default function Workout({}) {
+  // const [count, setcount] = useState(0);
+  const [name, setName] = useState("");
+  const [displayTxt,setDisplayTxt] = useState("");
+  const SubmitClick = () => {
+    setDisplayTxt(name);
+    setName("");
+  };
   return (
     <div>
-      <h1>Your Name is: {name}</h1>
-      <h1>{count}</h1>
-      <button
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+        placeholder="Enter your name"
+        className="text-black"
+      />
+      <h1>You Entered is: {displayTxt}</h1>
+      <button onClick={SubmitClick}>Add</button>
+
+      {/* <button
         onClick={() => {
           setcount(count + 1);
           // handleClick();
@@ -22,8 +38,7 @@ export default function Workout({ name, handleClick }) {
       <br />
       <button onClick={()=>{setcount(0)}}>
         Reset
-      </button>
+      </button> */}
     </div>
   );
 }
-
