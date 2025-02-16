@@ -4,24 +4,26 @@ import { useState } from "react";
 export default function Workout({}) {
   // const [count, setcount] = useState(0);
   const [name, setName] = useState("");
-  const [displayTxt,setDisplayTxt] = useState("");
-  const SubmitClick = () => {
-    setDisplayTxt(name);
+  const [display, setDisplay] = useState("");
+  const submitClick = () => {
+    setDisplay(name);
     setName("");
   };
+
   return (
     <div>
       <input
         type="text"
+        placeholder="Enter your name"
         value={name}
+        className="text-black"
         onChange={(e) => {
           setName(e.target.value);
         }}
-        placeholder="Enter your name"
-        className="text-black"
       />
-      <h1>You Entered is: {displayTxt}</h1>
-      <button onClick={SubmitClick}>Add</button>
+      <br />
+      <button onClick={submitClick}>Submit</button>
+      <h1>You entered is :{display}</h1>
 
       {/* <button
         onClick={() => {
